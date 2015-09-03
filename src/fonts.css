@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'vibrey_smallcapsoff';
+  src: url('../fonts/vibrey_smallcaps-off-webfont.eot');
+  src: url('../fonts/vibrey_smallcaps-off-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/vibrey_smallcaps-off-webfont.woff2') format('woff2'),
+       url('../fonts/vibrey_smallcaps-off-webfont.woff') format('woff'),
+       url('../fonts/vibrey_smallcaps-off-webfont.ttf') format('truetype'),
+       url('../fonts/vibrey_smallcaps-off-webfont.svg#vibrey_smallcapsoff') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'vibrey_smallcapson';
+  src: url('../fonts/vibrey_smallcaps-on-webfont.eot');
+  src: url('../fonts/vibrey_smallcaps-on-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/vibrey_smallcaps-on-webfont.woff2') format('woff2'),
+       url('../fonts/vibrey_smallcaps-on-webfont.woff') format('woff'),
+       url('../fonts/vibrey_smallcaps-on-webfont.ttf') format('truetype'),
+       url('../fonts/vibrey_smallcaps-on-webfont.svg#vibrey_smallcapson') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'vibrey_uppercaseoff';
+  src: url('../fonts/vibrey_uppercase-off-webfont.eot');
+  src: url('../fonts/vibrey_uppercase-off-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/vibrey_uppercase-off-webfont.woff2') format('woff2'),
+       url('../fonts/vibrey_uppercase-off-webfont.woff') format('woff'),
+       url('../fonts/vibrey_uppercase-off-webfont.ttf') format('truetype'),
+       url('../fonts/vibrey_uppercase-off-webfont.svg#vibrey_uppercaseoff') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'vibrey_uppercaseon';
+  src: url('../fonts/vibrey_uppercase-on-webfont.eot');
+  src: url('../fonts/vibrey_uppercase-on-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/vibrey_uppercase-on-webfont.woff2') format('woff2'),
+       url('../fonts/vibrey_uppercase-on-webfont.woff') format('woff'),
+       url('../fonts/vibrey_uppercase-on-webfont.ttf') format('truetype'),
+       url('../fonts/vibrey_uppercase-on-webfont.svg#vibrey_uppercaseon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.vibrey-sm-off { font-family: 'vibrey_smallcapsoff'; }
+.vibrey-sm-on { font-family: 'vibrey_smallcapson'; }
+.vibrey-lg-off { font-family: 'vibrey_uppercaseoff'; }
+.vibrey-lg-on { font-family: 'vibrey_uppercaseon'; }
+
+.massive { font-size: 6rem; }
+
+@media (min-width: 40em) {
+  .massive { font-size: 8rem; }
+}
+
+@media (min-width: 52em) {
+  .massive { font-size: 12rem; }
+}

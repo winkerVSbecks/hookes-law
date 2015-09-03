@@ -1,0 +1,14 @@
+/**
+ * Animations
+ */
+@keyframes vibration-lg {
+
+  0% { font-family: 'vibrey_smallcapsoff'; background-color: red; }
+
+  50% { font-family: 'vibrey_smallcapson'; background-color: blue; }
+
+  100% { font-family: 'vibrey_smallcapsoff'; background-color: red; }
+
+}
+
+.vibrate-lg { animation: vibration-lg 500ms infinite; }
