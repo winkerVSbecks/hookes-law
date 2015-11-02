@@ -32,39 +32,17 @@
 @import 'basscss-borders';
 @import 'basscss-colors';
 @import 'basscss-background-colors';
-
-
-/* Optional Modules (not included in Basscss by default) */
-/*
-@import 'basscss-btn-sizes';
-@import 'basscss-color-forms-dark';
 @import 'basscss-input-range';
-@import 'basscss-progress';
-@import 'basscss-background-images';
-@import 'basscss-media-object';
-@import 'basscss-responsive-white-space';
-@import 'basscss-utility-headings';
-@import 'basscss-ui-utility-groups';
-@import 'basscss-table-object';
-@import 'basscss-highlight-dark';
-@import 'basscss-highlight';
-*/
-
-
-/* Example custom file import */
-/*
-@import './color/borders';
-*/
-
 
 /* Default custom properties */
 @import 'basscss-defaults';
 
-@import 'layout';
+@import 'misc';
 @import 'fonts';
 @import 'animations';
 
 :root {
   --font-family: 'Merriweather', serif;
-  --heading-font-family: 'Raleway', sans-serif;
+  --heading-font-family: 'Merriweather', serif;
+  --blue: #1485E0;
 }

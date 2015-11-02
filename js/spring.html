@@ -1,0 +1,43 @@
+<svg width="100%"
+  height="100%"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  shape-rendering="geometricPrecision"
+    ng-mousemove="ctrl.onDrag($event)"
+    ng-mouseup="ctrl.onDragEnd($event)"
+    ng-mouseleave="ctrl.onDragEnd($event)">
+
+  <g ng-attr-transform="translate(0, {{ ctrl.y }})">
+    <path fill="#1485E0"
+      ng-attr-transform="translate({{ ctrl.x + 40 }}) rotate(-90 0 62) scale(3)"
+      d="M7.448,4.044h0.851v2.127c0,0.235,0.19,0.425,0.425,0.425h2.553c0.234,0,0.426-0.19,0.426-0.425V4.044h0.851c0.234,0,0.425-0.19,0.425-0.425c0-0.117-0.047-0.224-0.124-0.301l-2.553-2.552C10.224,0.688,10.117,0.641,10,0.641S9.776,0.688,9.699,0.766L7.146,3.318C7.07,3.395,7.022,3.501,7.022,3.619C7.022,3.854,7.213,4.044,7.448,4.044 M10,1.667l1.525,1.525h-0.249c-0.234,0-0.425,0.191-0.425,0.426v2.127H9.149V3.619c0-0.235-0.19-0.426-0.425-0.426H8.475L10,1.667z">
+    </path>
+
+    <g class="grabbing"
+      ng-mousedown="ctrl.onDragStart($event)"
+      ng-attr-transform="translate({{ ctrl.x }} 2) scale(3)">
+      <path fill="#1485E0"
+        d="M10,0.542c-5.224,0-9.458,4.234-9.458,9.458c0,5.223,4.235,9.459,9.458,9.459c5.224,0,9.458-4.236,9.458-9.459C19.459,4.776,15.225,0.542,10,0.542">
+      </path>
+
+      <path fill="#fff"
+        d="M8.923,18.523C4.685,17.992,1.402,14.383,1.402,10c0-4.383,3.283-7.993,7.521-8.524C6.919,3.749,5.701,6.731,5.701,10C5.701,13.27,6.919,16.25,8.923,18.523">
+      </path>
+
+      <path fill="#C4E1F7"
+        d="M10,18.637c-0.372,0-0.735-0.031-1.094-0.077C6.9,16.278,5.682,13.275,5.682,10c0-3.276,1.219-6.278,3.224-8.56C9.265,1.395,9.628,1.364,10,1.364c4.771,0,8.637,3.867,8.637,8.636C18.637,14.771,14.771,18.637,10,18.637">
+      </path>
+    </g>
+
+    <g stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke="#1485E0"
+      stroke-width="3"
+      fill="none">
+      <path ng-attr-d="{{ ctrl.join }}" />
+      <path ng-attr-d="{{ ctrl.springPath }}" />
+      <path ng-attr-d="{{ ctrl.end }}" />
+    </g>
+  </g>
+</svg>
