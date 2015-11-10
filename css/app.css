@@ -125,7 +125,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Merriweather', serif;
   font-weight: bold;
   line-height: 1.25;
   margin-top: 1em;
@@ -170,7 +170,7 @@ body {
 }
 
 a {
-  color: #0074d9;
+  color: #1485E0;
   text-decoration: none;
 }
 
@@ -202,8 +202,8 @@ hr {
 .field:focus,
 .field.is-focused {
   outline: none;
-  border-color: #0074d9;
-  box-shadow: 0 0 0 2px rgba(0, 116, 217, 0.5);
+  border-color: #1485E0;
+  box-shadow: 0 0 0 2px rgba(20, 133, 224, 0.5);
 }
 
 .field:disabled,
@@ -303,7 +303,7 @@ hr {
 
 .btn-primary {
   color: #fff;
-  background-color: #0074d9;
+  background-color: #1485E0;
   border-radius: 3px;
 }
 
@@ -861,7 +861,7 @@ hr {
 .white  { color: #fff }
 
 .aqua  { color: #7fdbff }
-.blue  { color: #0074d9 }
+.blue  { color: #1485E0 }
 .navy  { color: #001f3f }
 .teal  { color: #39cccc }
 .green { color: #2ecc40 }
@@ -885,7 +885,7 @@ hr {
 .bg-white  { background-color: #fff }
 
 .bg-aqua  { background-color: #7fdbff }
-.bg-blue  { background-color: #0074d9 }
+.bg-blue  { background-color: #1485E0 }
 .bg-navy  { background-color: #001f3f }
 .bg-teal  { background-color: #39cccc }
 .bg-green { background-color: #2ecc40 }
@@ -908,34 +908,116 @@ hr {
 .bg-lighten-2 { background-color: #FFFFFF; background-color: rgba(255,255,255,.125) }
 .bg-lighten-3 { background-color: #FFFFFF; background-color: rgba(255,255,255,.25) }
 .bg-lighten-4 { background-color: #FFFFFF; background-color: rgba(255,255,255,.5) }
+/* Basscss Input Range */
 
+input[type=range] {
+  vertical-align: middle;
+  background-color: transparent;
+}
 
-/* Optional Modules (not included in Basscss by default) */
-/*
-@import 'basscss-btn-sizes';
-@import 'basscss-color-forms-dark';
-@import 'basscss-input-range';
-@import 'basscss-progress';
-@import 'basscss-background-images';
-@import 'basscss-media-object';
-@import 'basscss-responsive-white-space';
-@import 'basscss-utility-headings';
-@import 'basscss-ui-utility-groups';
-@import 'basscss-table-object';
-@import 'basscss-highlight-dark';
-@import 'basscss-highlight';
-*/
+.range-light {
+  color: inherit;
+  -webkit-appearance: none;
+  padding-top: 8px;
+  padding-top: .5rem;
+  padding-bottom: 8px;
+  padding-bottom: .5rem;
+}
 
+.range-light::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  position: relative;
+  width: 8px;
+  width: .5rem;
+  height: 20px;
+  height: 1.25rem;
+  border-radius: 3px;
+  background-color: currentcolor;
+  cursor: pointer;
+  margin-top: -8px;
+  margin-top: -0.5rem;
+}
 
-/* Example custom file import */
-/*
-@import './color/borders';
-*/
+/* Touch screen friendly pseudo element */
+.range-light::-webkit-slider-thumb:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -8px;
+  top: -0.5rem;
+  left: -14px;
+  left: -0.875rem;
+  width: 36px;
+  width: 2.25rem;
+  height: 36px;
+  height: 2.25rem;
+  opacity: 0;
+}
 
+.range-light::-moz-range-thumb {
+  width: 8px;
+  width: .5rem;
+  height: 20px;
+  height: 1.25rem;
+  border-radius: 3px;
+  border-color: transparent;
+  border-width: 0;
+  background-color: currentcolor;
+  cursor: pointer;
+}
+
+.range-light::-webkit-slider-runnable-track {
+  height: 4px;
+  height: 0.25rem;
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: #000000;
+  background-color: rgba(0,0,0,.25);
+}
+
+.range-light::-moz-range-track {
+  height: 4px;
+  height: 0.25rem;
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: #000000;
+  background-color: rgba(0,0,0,.25);
+}
+
+.range-light:focus {
+  outline: none;
+}
+
+.range-light:focus::-webkit-slider-thumb {
+  outline: none;
+  border: 0;
+  box-shadow: 0 0 1px 2px currentcolor;
+}
+
+.range-light:focus::-moz-range-thumb {
+  outline: none;
+  border: 0;
+  box-shadow: 0 0 0 3px rgba(0,0,0,.25);
+}
 
 /* Default custom properties */
 
 .vh-100 { height: 100vh; }
+
+.box {
+  height: 60px;
+  width: 60px;
+}
+
+.grab { cursor: -webkit-grab; cursor: grab; }
+.grabbing { cursor: -webkit-grabbing; cursor: grabbing; }
+
+.controls {
+  top: 80%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+}
 @font-face {
   font-family: 'vibrey_smallcapsoff';
   src: url('../fonts/vibrey_smallcaps-off-webfont.eot');

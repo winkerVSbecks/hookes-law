@@ -5,7 +5,13 @@
   "main": "index.html",
   "author": "Varun Vachhar <varunvachhar@gmail.com>",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
+    "angular": "^1.4.7",
+    "angular-touch": "^1.4.7",
+    "babel-core": "^6.1.2",
+    "babel-eslint": "^4.1.4",
+    "babel-loader": "^6.0.1",
+    "babel-preset-es2015": "^6.1.2",
     "basscss": "^7.0.4",
     "basscss-align": "latest",
     "basscss-background-colors": "latest",
@@ -23,6 +29,7 @@
     "basscss-color-forms": "latest",
     "basscss-color-forms-dark": "latest",
     "basscss-color-tables": "latest",
+    "basscss-color-input-range": "^1.0.0",
     "basscss-colors": "latest",
     "basscss-defaults": "latest",
     "basscss-grid": "latest",
@@ -41,18 +48,21 @@
     "basscss-utility-layout": "latest",
     "basscss-utility-typography": "latest",
     "basscss-white-space": "latest",
-    "flex-object": "latest"
-  },
-  "devDependencies": {
     "cssnext": "^1.1.0",
+    "flex-object": "latest",
     "http-server": "^0.8.0",
-    "watch": "^0.14.0"
+    "ramda": "^0.18.0",
+    "rebound": "0.0.13",
+    "watch": "^0.14.0",
+    "webpack": "^1.12.3"
   },
   "scripts": {
-    "css": "cssnext src/app.css css/app.css",
-    "minify:css": "cssnext -c src/app.css css/app.min.css",
+    "build": "webpack --config webpack.config.js",
+    "watch:webpack": "webpack --config webpack.config.js --watch",
+    "css": "cssnext styles/app.css css/app.css",
+    "minify:css": "cssnext -c styles/app.css css/app.min.css",
     "serve": "http-server -p 3000",
-    "start": "npm run watch:css & npm run serve",
-    "watch:css": "watch 'npm run css && npm run minify:css' ./src"
+    "start": "npm run watch:css & npm run watch:webpack & npm run serve",
+    "watch:css": "watch 'npm run css && npm run minify:css' ./styles"
   }
 }
