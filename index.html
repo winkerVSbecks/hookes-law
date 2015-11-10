@@ -6,7 +6,7 @@
   <meta title="description" content="">
   <meta title="author" content="">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700,900italic,900,700italic,400italic|Raleway:700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,700,900italic,900,700italic,400italic">
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body ng-app="hookesLaw" ng-controller="MainCtrl as main">
@@ -23,8 +23,28 @@
       <p class="m0 mx-auto sm-col sm-col-8 h3 p2">Hooke's law is a principle of physics that states that the force <span class="bold italic">F</span> needed to extend or compress a spring by some distance <span class="bold italic">X</span> is proportional to that distance. That is: <span class="bold italic">F = -kx</span>, where k is a constant factor characteristic of the spring, its stiffness.</p>
     </section>
 
+    <section class="vh-100 flex flex-center p2 relative">
+      <spring k="main.k" formula-x="main.x"></spring>
+      <div class="absolute md-col-10 lg-col-8 col-12 flex flex-center controls">
+        <!-- Formula -->
+        <div class="flex-auto"></div>
+        <div class="lg-col-2 sm-col-3 center">
+          F ({{ -main.k * main.x / 100 | number: 0 }}) =
+        </div>
+        <div class="col-6 sm-col-4 blue">
+          <label class="black block">-k (stiffness): {{ main.k / 100 }}</label>
+          <input class="range-light col-12"
+            ng-model="main.k"
+            type="range">
+        </div>
+        <div class="col-1 center">*</div>
+        <div class="lg-col-1 sm-col-2 center">x ({{ main.x | number: 0 }})</div>
+        <div class="flex-auto"></div>
+      </div>
+    </section>
+
     <section class="vh-100 flex flex-center">
-      <div class=" mx-auto">
+      <div class="mx-auto">
         <svg class="block center col-12 mb2"
           viewBox="0 0 20 20"
           width="2rem"
@@ -39,8 +59,7 @@
     </section>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
-  <script src="js/app.js"></script>
+  <script src="bundle.js"></script>
 
 </body>
 </html>
