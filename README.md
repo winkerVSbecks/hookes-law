@@ -8,9 +8,11 @@ A site explaining the Hooke's Law.
 
 ## NPM Scripts
 - `css`: runs scripts for processing with [cssnext](https://cssnext.github.io/)
-- `minify`: minify the compiled CSS file
+- `minify:css`: minify the compiled CSS file
 - `serve`: start a simple http server
 - `watch:css`: watched CSS files for changes and runs `css` and `minify`
-- `start`: `watch` + `serve`
+- `watch:webpack`: Webpack watch
+- `build`: Webpack build
+- `start`: Watch Webpack, CSS & serve
 
 MIT License
