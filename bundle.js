@@ -29708,7 +29708,6 @@
 	    var elementInfo = $element[0].getBoundingClientRect();
 	    w = elementInfo.width;
 	    MAX_OFFSET = w * 0.5;
-	    console.log(w, MAX_OFFSET);
 	    _this.y = (elementInfo.height - h) * 0.5;
 	    _this.render(0);
 	    _this.end = getEnd(w, h);
@@ -29749,12 +29748,12 @@
 	  // Interaction handlers
 	  this.onDragStart = function (e) {
 	    _this.isDragging = true;
-	    _this.xStart = e.x;
+	    _this.xStart = e.clientX;
 	  };
 
 	  this.onDrag = function (e) {
 	    if (_this.isDragging) {
-	      _this.offset = -Math.min(MAX_OFFSET, Math.max(0, _this.xStart - e.x));
+	      _this.offset = -Math.min(MAX_OFFSET, Math.max(0, _this.xStart - e.clientX));
 
 	      var val = rebound.MathUtil.mapValueInRange(_this.offset, 0, -MAX_OFFSET, 0, 1);
 	      _this.spring.setCurrentValue(val).setAtRest();

@@ -13,7 +13,6 @@ export default function SpringCtrl($element, $scope, $window) {
     const elementInfo = $element[0].getBoundingClientRect();
     w = elementInfo.width;
     MAX_OFFSET = w * 0.5;
-    console.log(w, MAX_OFFSET);
     this.y = (elementInfo.height - h) * 0.5;
     this.render(0);
     this.end = getEnd(w, h);
@@ -57,12 +56,15 @@ export default function SpringCtrl($element, $scope, $window) {
   // Interaction handlers
   this.onDragStart = (e) => {
     this.isDragging = true;
-    this.xStart = e.x;
+    this.xStart = e.clientX;
   };
 
   this.onDrag = (e) => {
     if (this.isDragging) {
-      this.offset = -Math.min(MAX_OFFSET, Math.max(0, this.xStart - e.x));
+      this.offset = -Math.min(
+        MAX_OFFSET,
+        Math.max(0, this.xStart - e.clientX)
+      );
 
       const val = rebound.MathUtil
         .mapValueInRange(this.offset, 0, -MAX_OFFSET, 0, 1);
