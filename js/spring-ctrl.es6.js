@@ -53,7 +53,7 @@ export default function SpringCtrl($element, $scope, $window) {
     this.spring.setSpringConfig(springConfig);
   });
 
-  // Interaction handlers
+  // Mouse Events
   this.onDragStart = (e) => {
     this.isDragging = true;
     this.xStart = e.clientX;
@@ -80,6 +80,29 @@ export default function SpringCtrl($element, $scope, $window) {
     }
   };
 
+  // Touch Events
+  const handle = $element.find('g')[1];
+  let tsY;
+
+  angular.element(handle).bind('touchstart', (e) => {
+    if (e.targetTouches.length == 1) {
+      const touch = e.targetTouches[0];
+      tsY = touch.clientY;
+      this.onDragStart(touch);
+    }
+  });
+
+  $element.bind('touchmove', (e) => {
+    if (e.targetTouches.length === 1) {
+      const touch = e.targetTouches[0];
+      if (Math.abs(touch.clientY - tsY) < 25) { e.preventDefault(); }
+      this.onDrag(touch);
+    }
+  });
+
+  $element.bind('touchend', () => this.onDragEnd());
+  $element.bind('touchcancel', () => this.onDragEnd());
+
   // Init
   applySize(true);
 
@@ -90,7 +113,7 @@ export default function SpringCtrl($element, $scope, $window) {
  */
 function buildSpring(w, h, start) {
 
-  const count = 128;
+  const count = w < 600 ? 64 : 128;
   const pitch = (w - start) / count;
   const amplitude = h / 4;
 
