@@ -6,9 +6,11 @@ import SpringCtrl from './spring-ctrl';
 /**
  * Hooke's Law
  */
-angular.module('hookesLaw', [])
-  .controller('MainCtrl', MainCtrl)
-  .controller('SpringCtrl', SpringCtrl)
+angular.module('hookesLaw', [
+  'ngTouch'
+])
+  .controller('MainCtrl', ['$interval', MainCtrl])
+  .controller('SpringCtrl', ['$element', '$scope', '$window', SpringCtrl])
   .directive('spring', () => {
     return {
       restrict: 'E',
