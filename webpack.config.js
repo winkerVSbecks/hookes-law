@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   // devtool: 'inline-source-map',
@@ -16,5 +17,8 @@ module.exports = {
       loader: 'babel?presets[]=es2015',
       include: path.join(__dirname, 'js')
     }]
-  }
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({ minimize: true })
+  ]
 };
